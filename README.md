@@ -1,0 +1,2 @@
+# linhasdecomandodiversas
+linhasdecomandodiversas
