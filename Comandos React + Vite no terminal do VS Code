@@ -1,0 +1,93 @@
+Comandos React + Vite no terminal do VS Code
+
+
+Criar o projeto
+# NPM
+npm create vite@latest my-app -- --template react
+# ou React + TS
+npm create vite@latest my-app -- --template react-ts
+
+# PNPM
+pnpm create vite my-app --template react
+pnpm create vite my-app --template react-ts
+
+# Yarn
+yarn create vite my-app --template react
+yarn create vite my-app --template react-ts
+
+# Bun
+bunx create-vite my-app --template react
+bunx create-vite my-app --template react-ts
+
+
+
+
+Entrar e instalar
+cd my-app
+npm install           # ou: pnpm i | yarn | bun install
+
+
+
+Build e preview de produção
+npm run build        # gera /dist
+npm run preview      # serve o build localmente
+
+Dependências comuns
+# roteamento
+npm i react-router-dom
+# requisições
+npm i axios
+# estado (opcional)
+npm i zustand
+
+Tipos (quando usar TypeScript)
+npm i -D @types/react @types/react-dom
+
+Lint/format
+# ESLint
+npm i -D eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks
+npx eslint --init   # guia interativo
+
+# Prettier
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+
+Testes
+npm i -D vitest @testing-library/react @testing-library/jest-dom jsdom
+# rodar testes
+npx vitest
+# com UI
+npx vitest --ui
+
+Variáveis de ambiente (prefixo obrigatório VITE_)
+# criar arquivo
+echo VITE_API_URL=https://api.exemplo.com > .env
+# usar: import.meta.env.VITE_API_URL
+
+Vite utilidades
+# analisar bundle (plugin opcional)
+npm i -D rollup-plugin-visualizer
+# depois adicione ao vite.config e rode o build
+npm run build
+
+Scripts úteis no package.json (referência)
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
+    "lint": "eslint .",
+    "test": "vitest"
+  }
+}
+
+
+
+
+Rodar em desenvolvimento
+npm run dev          # inicia o Vite em http://localhost:5173
+# porta customizada
+npx vite --port 3000
+
+
+
+
